@@ -107,6 +107,12 @@
     color: hsl(0, 0%, 100%);
     border: none;
     border-radius: 5px;
+    outline: none;
+}
+
+#calcDisplay:focus {
+    outline: none;
+    /* Ensures no outline is shown when focused */
 }
 
 /* Calculator Keys */
@@ -159,15 +165,19 @@
 
 /* Default Theme: Very Dark Desaturated Blue */
 .default {
-    background-color: hsl(222, 26%, 31%); /* Background color for default theme */
+    background-color: hsl(222, 26%, 31%);
+    /* Background color for default theme */
 }
 
-.default #calcDisplay, .default #themeIndicator {
-    background-color: hsl(224, 36%, 15%); /* Screen background color */
+.default #calcDisplay,
+.default #themeIndicator {
+    background-color: hsl(224, 36%, 15%);
+    /* Screen background color */
 }
 
 .default .calcKeysWrapper {
-    background-color: hsl(223, 31%, 20%); /* Keys background color */
+    background-color: hsl(223, 31%, 20%);
+    /* Keys background color */
 }
 
 /* Theme 1: Very Dark Desaturated Blue */

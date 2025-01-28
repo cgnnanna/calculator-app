@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap">
+  <title>Calculator App</title>
+</head>
+
+<body id="pageWrapper">
+  <div id="navigationWrapper">
+    <div id="calcLogo">
+      <p>Calc</p>
+    </div>
+    <div id="themeWrapper">
+      <p id="themeText">THEME</p>
+      <div id="themeSwitchWrapper">
+        <div class="themecalcKeys">
+          <p class="themecalcKey">1</p>
+          <p class="themecalcKey">2</p>
+          <p class="themecalcKey">3</p>
+        </div>
+        <div id="themeSwitch">
+          <span id="themeIndicator"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calculator Display -->
+  <div id="calcDisplayWrapper">
+    <input type="text" id="calcDisplay" readonly>
+  </div>
+
+  <!-- Calculator Keys -->
+  <div class="calcKeysWrapper">
+    <button class="calcKey" data-tip="7">7</button>
+    <button class="calcKey" data-tip="8">8</button>
+    <button class="calcKey" data-tip="9">9</button>
+    <button class="calcKey actionKey smallText" data-tip="DEL">DEL</button>
+    <button class="calcKey" data-tip="4">4</button>
+    <button class="calcKey" data-tip="5">5</button>
+    <button class="calcKey" data-tip="6">6</button>
+    <button class="calcKey actionKey" data-tip="+">+</button>
+    <button class="calcKey" data-tip="1">1</button>
+    <button class="calcKey" data-tip="2">2</button>
+    <button class="calcKey" data-tip="3">3</button>
+    <button class="calcKey actionKey" data-tip="-">-</button>
+    <button class="calcKey" data-tip=".">.</button>
+    <button class="calcKey" data-tip="0">0</button>
+    <button class="calcKey actionKey" data-tip="/">/</button>
+    <button class="calcKey actionKey" data-tip="X">x</button>
+    <button class="calcKey actionKey largeKey smallText" data-tip="RESET">RESET</button>
+    <button class="calcKey actionKey largeKey" data-tip="=">=</button>
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-# Calculator App
+# Calculator App ([url](https://cgnnanna.github.io/calculator-app/))
 
 ## Overview
 The **Calculator App** is a user-friendly, interactive tool designed to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. It features a theme switcher to customize the app’s appearance and provides an intuitive interface for efficient calculations.
@@ -52,7 +52,7 @@ The **Calculator App** is a user-friendly, interactive tool designed to perform 
 ---
 
 ## Demo
-[Live Preview]()
+[Live Preview](https://cgnnanna.github.io/calculator-app/)
 
 ---
 

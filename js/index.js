@@ -7,19 +7,58 @@ let currentInput = ''; // Store current input
 
 // Function to update the theme indicator position based on the current theme
 const updateThemeIndicator = () => {
+    // const set = new Set(["theme-1", "theme-2", "theme-3"]);
+    // let currentTheme = "";
+    // for(let i=0; i<body.classList.length; i++){
+    //     if(set.has(body.classList[i])){
+    //         currentTheme = body.classList[i];
+    //     }
+    //     else{
+    //         currentTheme = "default";
+    //     }
+    // }
+
     const currentTheme = body.classList.contains('theme-1') ? 'theme-1' :
         body.classList.contains('theme-2') ? 'theme-2' :
             body.classList.contains('theme-3') ? 'theme-3' : 'default';
 
-    if (currentTheme === 'theme-1') {
-        themeIndicator.style.left = '8px'; // Position for Theme 1
-    } else if (currentTheme === 'theme-2') {
-        themeIndicator.style.left = '28px'; // Position for Theme 2
-    } else if (currentTheme === 'theme-3') {
-        themeIndicator.style.left = '48px'; // Position for Theme 3
-    } else {
-        themeIndicator.style.left = '0px'; // Default styling
+    switch (currentTheme) {
+        case 'theme-1': {
+            themeIndicator.style.left = '8px'; // Position for Theme 1
+            break;
+        }
+        case 'theme-2': {
+            themeIndicator.style.left = '28px'; // Position for Theme 2
+            break;
+        }
+        case 'theme-3': {
+            themeIndicator.style.left = '48px'; // Position for Theme 3
+            break;
+        }
+        default: {
+            themeIndicator.style.left = '0px'; // Default styling
+        }
     }
+
+    // if (currentTheme === 'theme-1') {
+    //     themeIndicator.style.left = '8px'; // Position for Theme 1
+    // } else if (currentTheme === 'theme-2') {
+    //     themeIndicator.style.left = '28px'; // Position for Theme 2
+    // } else if (currentTheme === 'theme-3') {
+    //     themeIndicator.style.left = '48px'; // Position for Theme 3
+    // } else {
+    //     themeIndicator.style.left = '0px'; // Default styling
+    // }
+
+    // if (body.classList.contains('theme-1')) {
+    //     themeIndicator.style.left = '8px'; // Position for Theme 1
+    // } else if (cbody.classList.contains('theme-2')) {
+    //     themeIndicator.style.left = '28px'; // Position for Theme 2
+    // } else if (body.classList.contains('theme-1')) {
+    //     themeIndicator.style.left = '48px'; // Position for Theme 3
+    // } else {
+    //     themeIndicator.style.left = '0px'; // Default styling
+    // }
 };
 
 // Event listener for theme switch toggle (click)
@@ -94,18 +133,39 @@ calcKeys.forEach(key => {
     key.addEventListener('click', () => {
         const keyValue = key.textContent;
 
-        if (keyValue === 'DEL') {
-            currentInput = currentInput.slice(0, -1); // Remove last character
-        } else if (keyValue === 'RESET') {
-            currentInput = ''; // Reset the input
-        } else if (keyValue === '=') {
-            try {
-                currentInput = evaluateExpression(currentInput); // Evaluate expression
-            } catch (error) {
-                currentInput = 'Error';
+        // if (keyValue === 'DEL') {
+        //     currentInput = currentInput.slice(0, -1); // Remove last character
+        // } else if (keyValue === 'RESET') {
+        //     currentInput = ''; // Reset the input
+        // } else if (keyValue === '=') {
+        //     try {
+        //         currentInput = evaluateExpression(currentInput); // Evaluate expression
+        //     } catch (error) {
+        //         currentInput = 'Error';
+        //     }
+        // } else {
+        //     currentInput += keyValue; // Append key value
+        // }
+        switch (keyValue) {
+            case 'DEL': {
+                currentInput = currentInput.slice(0, -1); // Remove last character
+                break;
             }
-        } else {
-            currentInput += keyValue; // Append key value
+            case 'RESET': {
+                currentInput = ''; // Reset the input
+                break;
+            }
+            case '=': {
+                try {
+                    currentInput = evaluateExpression(currentInput); // Evaluate expression
+                } catch (error) {
+                    currentInput = 'Error';
+                }
+                break;
+            }
+            default: {
+                currentInput += keyValue; // Append key value
+            }
         }
 
         calcDisplay.value = currentInput;
